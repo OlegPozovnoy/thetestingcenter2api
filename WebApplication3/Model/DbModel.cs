@@ -10,5 +10,7 @@ namespace WebApplication3.Model
     {
         public DbModel(DbContextOptions<DbModel> options) : base(options) {
         }
+
+        public DbSet<Test> Tests { get; set; }
     }
 }
