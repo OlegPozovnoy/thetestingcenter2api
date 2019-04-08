@@ -7,4 +7,4 @@ at <a href="https://thetestingcenter2.azurewebsites.net/">https://thetestingcent
 
 <p>The code is deployed at <a href="https://thetestingcenter2.azurewebsites.net/">https://thetestingcenter2api.azurewebsites.net/</a></p> 
 
-<p>Bonus mark: added NSwag.AspNetCore support <a href="https://thetestingcenter2.azurewebsites.net/swagger">https://thetestingcenter2api.azurewebsites.net/swagger</a></p>
+<p>Bonus mark: added NSwag.AspNetCore support <a href="https://thetestingcenter2api.azurewebsites.net/swagger">https://thetestingcenter2api.azurewebsites.net/swagger</a></p>
