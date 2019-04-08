@@ -13,6 +13,10 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using WebApplication3.Model;
 
+using NJsonSchema;
+using NSwag.AspNetCore;
+using System.Reflection;
+
 namespace WebApplication3
 {
     public class Startup
@@ -31,6 +35,17 @@ namespace WebApplication3
             //!!!!!
             var db = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DbModel>(options => options.UseSqlServer(db));
+
+            services.AddSwaggerDocument(configure =>
+           {
+               configure.PostProcess = document =>
+               {
+                   document.Info.Version = "v1";
+                   document.Info.Title = "The Testing Center API";
+                   document.Info.Description = "API for The Testing Center ASP.NET APP";
+               };
+           }
+                );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +63,10 @@ namespace WebApplication3
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
+            app.UseSwagger();
+            app.UseSwaggerUi3();
         }
+
     }
 }
